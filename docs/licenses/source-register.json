@@ -1,0 +1,21 @@
+[
+  {
+    "name": "jquery-3.2.1.txt",
+    "source": "https://raw.githubusercontent.com/jquery/jquery/3.2.1/LICENSE.txt",
+    "status": "retrieved",
+    "sha256": "2b3ed8ba424423a50b023e728530d94bc385cfc7c328ad65a3dfee9c7c0531c5"
+  },
+  {
+    "name": "bootstrap-4.0.0-beta.txt",
+    "source": "https://raw.githubusercontent.com/twbs/bootstrap/v4.0.0-beta/LICENSE",
+    "status": "retrieved",
+    "sha256": "7efd8eff0e03c9b8b31fd2750d66268135deda2d0c9d46627f5e7cbe79caf907"
+  },
+  {
+    "name": "fontawesome-v4-license.html",
+    "source": "https://fontawesome.com/v4/license/",
+    "status": "Official v4 license page read via web tool; local HTML retrieval failed",
+    "reason": "HTTPError",
+    "limitations": "No full local license snapshot; final notice compliance review pending"
+  }
+]

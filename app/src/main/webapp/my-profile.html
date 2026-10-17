@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>會員資料 · NewView</title>
+<link rel="icon" href="assets/portfolio/mark.svg">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/social-reconnect.css">
+<link rel="stylesheet" href="css/portfolio.css?v=20261017-auth-orders-10">
+<script defer src="vendor/jquery/jquery-3.2.1.min.js">
+</script>
+<script defer src="vendor/bootstrap/js/popper.js">
+</script>
+<script defer src="vendor/bootstrap/js/bootstrap.min.js">
+</script>
+<script defer src="js/social-reconnect.js?v=20261017-auth-orders-10">
+</script>
+</head>
+<body>
+<a class="nv-skip" href="#main-content">跳到主要內容</a>
+<header class="nv-header">
+<nav class="nv-nav container" aria-label="主選單">
+<a class="nv-logo" href="forum_home.html">NewView<span>藝文・社群</span>
+</a>
+<button class="nv-menu-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-links">選單 <span aria-hidden="true">☰</span>
+</button>
+<div class="nv-links" id="site-links">
+<a href="activities.html">活動專區</a>
+<a href="checkout_cart.html">購物車</a>
+<a href="forum_home.html">社群首頁</a>
+<a href="forum_dopost.html">新增文章</a>
+<a href="sign-in.html" id="login-link">會員登入</a>
+<a href="member.html" id="member-link" hidden>會員資料</a>
+<span id="session-name">
+</span>
+<button id="logout-button" type="button" hidden>登出</button>
+</div>
+</nav>
+</header>
+
+<div id="page-status" class="nv-status container" hidden role="status" aria-live="polite">
+</div>
+<main id="main-content" class="container nv-member-page">
+<header class="nv-member-heading">
+<span class="nv-eyebrow">YOUR NEWVIEW</span>
+<h1>會員資料</h1>
+<p>整理個人資料，讓每一次相遇更有連結。</p>
+</header>
+<div class="nv-member-layout">
+<aside class="nv-member-sidebar">
+<div class="nv-member-identity">
+<span class="nv-member-monogram" aria-hidden="true">N.</span>
+<span>會員中心<small>你的藝文日常</small>
+</span>
+</div>
+<nav aria-label="會員功能">
+<a href="member.html" aria-current="page">
+<span aria-hidden="true">◌</span>會員資料</a>
+<a href="myOrder.html">
+<span aria-hidden="true">▤</span>我的訂單</a>
+<a href="my-favourite.html">
+<span aria-hidden="true">♡</span>我的收藏</a>
+<a href="tickets.html">
+<span aria-hidden="true">▱</span>我的票券</a>
+<a href="my-coupons.html">
+<span aria-hidden="true">◇</span>我的優惠券</a>
+<a href="change-password.html">
+<span aria-hidden="true">⌑</span>修改密碼</a>
+</nav>
+<a class="nv-member-discover" href="activities.html">探索下一場演出 ↗</a>
+</aside>
+<div class="nv-member-content">
+<section class="nv-form-card nv-profile-card">
+<div class="nv-profile-card-heading">
+<h2>基本資料</h2>
+<span>PERSONAL DETAILS</span>
+</div>
+
+<p class="nv-profile-account">帳號：<strong id="member-account">
+</strong>
+</p>
+<form id="profile-form">
+<div class="form-group">
+<label for="name">姓名</label>
+<input class="form-control" id="name" name="name" type="text" required maxlength="100" >
+</div>
+<div class="form-group">
+<label for="nickname">暱稱</label>
+<input class="form-control" id="nickname" name="nickname" type="text" required maxlength="100" >
+</div>
+<div class="form-group">
+<label for="birthdate">生日</label>
+<input class="form-control" id="birthdate" name="birthdate" type="date" required maxlength="10" >
+</div>
+<div class="form-group">
+<label for="cellphone">手機（選填）</label>
+<input class="form-control" id="cellphone" name="cellphone" type="tel" maxlength="10" pattern="09[0-9]{8}">
+</div>
+<div class="form-group">
+<label for="email">電子郵件</label>
+<input class="form-control" id="email" name="email" type="email" required maxlength="254" >
+</div>
+<button class="nv-button" type="submit">儲存會員資料</button>
+</form>
+<p>
+<a href="change-password.html">修改密碼 →</a>
+</p>
+<p id="profile-result" role="status">
+</p>
+
+</section>
+</div>
+</div>
+</main>
+<footer class="nv-footer">
+<div class="container">
+<a class="nv-logo" href="forum_home.html">NewView</a>
+<p>在藝文裡相遇，在社群裡交流。</p>
+<small>
+<a href="activities.html">探索活動</a> · <a href="forum_home.html">藝文社群</a> · <a href="member.html">會員中心</a>
+<br>NewView 作品展示｜活動、人物、主辦及場地均為虛構。訂單與核銷為模擬，不收款、不提供真實入場資格。</small>
+</div>
+</footer>
+</body>
+</html>

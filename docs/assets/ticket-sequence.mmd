@@ -1,0 +1,16 @@
+sequenceDiagram
+ participant U as 使用者
+ participant B as 瀏覽器
+ participant C as 購物車控制器
+ participant D as MySQL
+ participant R as Redis
+ U->>B: 勾選商品與優惠券
+ B->>C: 取得試算與 requestID
+ C->>D: 檢查本人資料、價格與優惠
+ C->>R: 檢查座位 token 與 TTL
+ C-->>B: 金額與確認資訊
+ B->>C: 明確確認本機結帳
+ C->>D: 交易建立拆單、逐張票券、唯一座位與收據
+ C->>D: 刪除本次勾選商品並提交
+ C->>R: 比對原 token 後釋放暫鎖
+ C-->>B: 訂單編號；重複請求重播原結果

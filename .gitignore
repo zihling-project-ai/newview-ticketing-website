@@ -1,0 +1,12 @@
+/app/target/
+**/__pycache__/
+*.pyc
+*.class
+*.war
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+/docs/*-verification.json
+/docs/*-suite.json

@@ -1,0 +1,57 @@
+{
+  "日期": "2026-10-18",
+  "目的": "核對直接維護HTML版本的中文README、目錄與新機啟動步驟",
+  "文件與實際結構": "PASS：沒有tooling、runtime或scripts/pages，無產生器執行指令；唯一前端來源為app/src/main/webapp",
+  "文件內容": "已分開首次安裝／建庫與種子、後續啟動、停止、直接修改前端、換電腦及常見錯誤；明確說明下載不會自動啟動服務",
+  "工具修正": [
+    "私人狀態目錄支援建立尚不存在的父目錄",
+    "私人路徑統一展開並解析",
+    "展示資料前的來源備份清單更新為app/src、scripts、tests、database"
+  ],
+  "實際檢查": {
+    "Python語法": "PASS，22個檔案",
+    "新巢狀私人路徑": "PASS：用暫存資料夾實際載入啟動工具並驗證建立父目錄，未啟停服務",
+    "初始化與備份路徑": "PASS：靜態核對，未執行種子或改動資料庫",
+    "Markdown連結與必要檔案": "PASS",
+    "Maven建置": "PASS：Java17、Maven3.9.11、既有本機依賴快取"
+  },
+  "界線": "本輪為文件與路徑整理檢查，未重跑547項功能測試；先前完整回測紀錄保留。未執行新電腦空快取下載、Windows原生或Linux實機驗證。沒有上傳。",
+  "檔案指紋": [
+    {
+      "path": "README.md",
+      "sha256": "f864352d21d40c434894c5240cf699961736c7bcb42deb5251ab2008049ff783"
+    },
+    {
+      "path": "docs/setup-and-validation.md",
+      "sha256": "d0617e59fa36c3a20af4ce617b5c039d35d8cb417b7a0fb14f7060fe13a9423a"
+    },
+    {
+      "path": ".env.example",
+      "sha256": "23ef9ec15b69d1f01376b83d0ad02ef17ff6f9940c90bf803b4d8859096ab411"
+    },
+    {
+      "path": "docs/technology-decisions.md",
+      "sha256": "bd0a0b62807cbfabbe4303b10fd622628de8e0e541bdc9dee822880777c5dd39"
+    },
+    {
+      "path": "docs/PUBLICATION_REVIEW.md",
+      "sha256": "1aafc7b33f160efc9e37e90b27f4f46d4685f1877eaab1d720eb281a88cbfee5"
+    },
+    {
+      "path": "scripts/local.py",
+      "sha256": "dbcd17a4333267d000fe97323ace1835f993bed4667e0456f0b2e34be1cb8391"
+    },
+    {
+      "path": "scripts/setup/setup_database.py",
+      "sha256": "837b999613a7ed86d4c48cf8f59db2632e08026af81bafce22fc82367fe6c13a"
+    },
+    {
+      "path": "scripts/setup/seed_portfolio.py",
+      "sha256": "dcda7b2d5fda76478a26cf81f91365126fd13947a7bca6118a5f237a0a742275"
+    },
+    {
+      "path": "scripts/setup/seed_portfolio_orders.py",
+      "sha256": "eb6660e6aac0b350dd7f6863a313086b6a71ada6677c70736cd789bd8683acc2"
+    }
+  ]
+}

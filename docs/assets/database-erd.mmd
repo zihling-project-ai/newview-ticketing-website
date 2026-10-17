@@ -1,0 +1,153 @@
+erDiagram
+  Publisher {
+    int pubID PK
+  }
+  act {
+    int actID PK
+    int actCategoryID
+    int cityAddressID
+    int pubID
+  }
+  actCategory {
+    int actCategoryID PK
+  }
+  actpic {
+    int actPicID PK
+    int actID
+  }
+  administrator {
+    int adminID PK
+  }
+  cartact {
+    int cartActID PK
+    int actID
+    int userID
+  }
+  city {
+    int cityAddressID PK
+  }
+  compic {
+    int comPicID PK
+    int orderListID
+  }
+  discount {
+    int discountNO PK
+    int adminID
+    int pubID
+  }
+  likes {
+    int likeID PK
+    int postID
+    int userID
+  }
+  local_cart_seat {
+    int userID PK
+    int actID PK
+    varchar seatCode PK
+  }
+  local_checkout_receipt {
+    varchar requestID PK
+    int userID
+  }
+  local_coupon_redemption {
+    int orderID PK
+  }
+  local_seat_booking {
+    int actID PK
+    varchar seatCode PK
+    int orderListID
+  }
+  local_seat_layout {
+    int actID PK
+    varchar seatCode PK
+  }
+  local_simulation_order {
+    int orderID PK
+    varchar requestID
+  }
+  myLike {
+    int myLikeID PK
+    int actID
+    int userID
+  }
+  orderlist {
+    int orderListID PK
+    int orderID
+    int actID
+  }
+  orders {
+    int orderID PK
+    int userID
+    int discountNO
+    int pubID
+  }
+  post {
+    int postID PK
+    int postCategoryID
+    int userID
+  }
+  postcategory {
+    int postCategoryID PK
+  }
+  postmessage {
+    int postMessageID PK
+    int postID
+    int userID
+  }
+  postpic {
+    int postPicID PK
+    int postID
+  }
+  pubUser {
+    int pubUserID PK
+    int pubID
+  }
+  report {
+    int reportID PK
+    int postID
+    int userID
+  }
+  useDiscount {
+    int useDisID PK
+    int discountNO
+    int userID
+  }
+  user {
+    int userID PK
+  }
+  city |o--o{ act : "cityAddressID"
+  Publisher |o--o{ act : "pubID"
+  actCategory |o--o{ act : "actCategoryID"
+  act |o--o{ actpic : "actID"
+  user |o--o{ cartact : "userID"
+  act |o--o{ cartact : "actID"
+  orderlist |o--o{ compic : "orderListID"
+  administrator |o--o{ discount : "adminID"
+  Publisher |o--o{ discount : "pubID"
+  post |o--o{ likes : "postID"
+  user |o--o{ likes : "userID"
+  user |o--o{ local_cart_seat : "userID"
+  local_seat_layout |o--o{ local_cart_seat : "actID,seatCode"
+  user |o--o{ local_checkout_receipt : "userID"
+  local_seat_layout |o--o{ local_seat_booking : "actID,seatCode"
+  orderlist |o--o{ local_seat_booking : "orderListID"
+  act |o--o{ local_seat_layout : "actID"
+  orders |o--o{ local_simulation_order : "orderID"
+  local_checkout_receipt |o--o{ local_simulation_order : "requestID"
+  act |o--o{ myLike : "actID"
+  user |o--o{ myLike : "userID"
+  act |o--o{ orderlist : "actID"
+  orders |o--o{ orderlist : "orderID"
+  Publisher |o--o{ orders : "pubID"
+  user |o--o{ orders : "userID"
+  discount |o--o{ orders : "discountNO"
+  user |o--o{ post : "userID"
+  postcategory |o--o{ post : "postCategoryID"
+  post |o--o{ postmessage : "postID"
+  user |o--o{ postmessage : "userID"
+  post |o--o{ postpic : "postID"
+  Publisher |o--o{ pubUser : "pubID"
+  post |o--o{ report : "postID"
+  user |o--o{ report : "userID"
+  discount |o--o{ useDiscount : "discountNO"
+  user |o--o{ useDiscount : "userID"

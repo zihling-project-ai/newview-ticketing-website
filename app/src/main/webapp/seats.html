@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>活動選位 · NewView</title>
+<link rel="icon" href="assets/portfolio/mark.svg">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/social-reconnect.css">
+<link rel="stylesheet" href="css/portfolio.css?v=20261017-auth-orders-10">
+<script defer src="vendor/jquery/jquery-3.2.1.min.js">
+</script>
+<script defer src="vendor/bootstrap/js/popper.js">
+</script>
+<script defer src="vendor/bootstrap/js/bootstrap.min.js">
+</script>
+<script defer src="js/social-reconnect.js?v=20261017-auth-orders-10">
+</script>
+</head>
+<body>
+<a class="nv-skip" href="#main-content">跳到主要內容</a>
+<header class="nv-header">
+<nav class="nv-nav container" aria-label="主選單">
+<a class="nv-logo" href="forum_home.html">NewView<span>藝文・社群</span>
+</a>
+<button class="nv-menu-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-links">選單 <span aria-hidden="true">☰</span>
+</button>
+<div class="nv-links" id="site-links">
+<a href="activities.html">活動專區</a>
+<a href="checkout_cart.html">購物車</a>
+<a href="forum_home.html">社群首頁</a>
+<a href="forum_dopost.html">新增文章</a>
+<a href="sign-in.html" id="login-link">會員登入</a>
+<a href="member.html" id="member-link" hidden>會員資料</a>
+<span id="session-name">
+</span>
+<button id="logout-button" type="button" hidden>登出</button>
+</div>
+</nav>
+</header>
+
+<div id="page-status" class="nv-status container" hidden role="status" aria-live="polite">
+</div>
+<main id="main-content" class="container nv-seat-page">
+<header class="nv-seat-heading">
+<a id="seat-back-link" href="activities.html">← 返回活動</a>
+<span class="nv-eyebrow">CHOOSE YOUR MOMENT</span>
+<h1 id="seat-activity-name">選擇座位</h1>
+<p id="seat-activity-meta">
+</p>
+</header>
+<div class="nv-seat-layout">
+<section class="nv-seat-map-card" aria-label="活動座位配置">
+<div class="nv-seat-map-heading">
+<div>
+<h2>選擇你喜歡的位置</h2>
+<p id="seat-layout-info">
+</p>
+</div>
+<button id="seat-refresh" type="button" class="nv-cart-text-button">重新整理</button>
+</div>
+<div class="nv-seat-map-tools">
+<div class="nv-seat-legend">
+<span>
+<i class="seat-available">
+</i>可選</span>
+<span>
+<i class="seat-chosen">
+</i>已選／你的暫鎖</span>
+<span>
+<i class="seat-unavailable">
+</i>他人暫鎖／已分配</span>
+</div>
+<div class="nv-seat-zoom" aria-label="座位圖縮放">
+<button id="seat-zoom-out" type="button" aria-label="縮小座位圖">−</button>
+<span id="seat-zoom-label">100%</span>
+<button id="seat-zoom-in" type="button" aria-label="放大座位圖">＋</button>
+</div>
+</div>
+<div class="nv-seat-scroll" tabindex="0" role="region" aria-label="可左右捲動的座位圖">
+<div class="nv-stage">
+<span>舞台／講台方向</span>
+<small>STAGE</small>
+</div>
+<div id="seat-grid" aria-label="座位圖">
+</div>
+</div>
+<p class="nv-seat-map-caption">可左右、上下捲動查看座位。中央留白為場地保留區，不提供選位。</p>
+</section>
+<aside class="nv-seat-summary" aria-label="選位摘要">
+<span class="nv-eyebrow">YOUR SEATS</span>
+<h2>你的座位</h2>
+<p id="seat-selected" role="status">
+</p>
+<div id="seat-selected-codes" class="nv-seat-selected-codes">
+</div>
+<div class="nv-seat-price">
+<span>票券金額</span>
+<strong id="seat-total">NT$ 0</strong>
+</div>
+<p id="seat-expiry" role="status">
+</p>
+<button id="seat-hold" type="button" class="nv-button">保留座位並加入購物車</button>
+<button id="seat-release" type="button" class="nv-cart-text-button">釋放我的暫鎖</button>
+<p class="nv-seat-reserve-note">選取後需按下保留才會暫鎖 10 分鐘；逾時自動釋出，每次最多 10 張。</p>
+<a class="nv-seat-cart-link" href="checkout_cart.html">查看購物車 →</a>
+</aside>
+</div>
+<p class="nv-seat-demo-note">此為虛構場館的展示座位圖，沒有真實付款或入場效力。</p>
+</main>
+<footer class="nv-footer">
+<div class="container">
+<a class="nv-logo" href="forum_home.html">NewView</a>
+<p>在藝文裡相遇，在社群裡交流。</p>
+<small>
+<a href="activities.html">探索活動</a> · <a href="forum_home.html">藝文社群</a> · <a href="member.html">會員中心</a>
+<br>NewView 作品展示｜活動、人物、主辦及場地均為虛構。訂單與核銷為模擬，不收款、不提供真實入場資格。</small>
+</div>
+</footer>
+</body>
+</html>

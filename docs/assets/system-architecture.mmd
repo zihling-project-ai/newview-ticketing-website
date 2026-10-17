@@ -1,0 +1,14 @@
+flowchart TB
+ subgraph C[瀏覽器：不可信輸入]
+  UI[HTML / CSS / JavaScript]
+ end
+ subgraph L[本機私有環境]
+  F[Tomcat 9 / SocialFilter / Session]
+  S[Servlet 控制器與既有 DAO]
+  H[Hibernate]
+  D[(MySQL 永久資料)]
+  R[(Redis 座位暫存)]
+  UI -->|HTTP / Cookie / CSRF| F --> S
+  S --> H --> D
+  S --> R
+ end

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>分類文章 · NewView</title>
+<link rel="icon" href="assets/portfolio/mark.svg">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/social-reconnect.css">
+<link rel="stylesheet" href="css/portfolio.css?v=20261017-auth-orders-10">
+<script defer src="vendor/jquery/jquery-3.2.1.min.js">
+</script>
+<script defer src="vendor/bootstrap/js/popper.js">
+</script>
+<script defer src="vendor/bootstrap/js/bootstrap.min.js">
+</script>
+<script defer src="js/social-reconnect.js?v=20261017-auth-orders-10">
+</script>
+</head>
+<body>
+<a class="nv-skip" href="#main-content">跳到主要內容</a>
+<header class="nv-header">
+<nav class="nv-nav container" aria-label="主選單">
+<a class="nv-logo" href="forum_home.html">NewView<span>藝文・社群</span>
+</a>
+<button class="nv-menu-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-links">選單 <span aria-hidden="true">☰</span>
+</button>
+<div class="nv-links" id="site-links">
+<a href="activities.html">活動專區</a>
+<a href="checkout_cart.html">購物車</a>
+<a href="forum_home.html">社群首頁</a>
+<a href="forum_dopost.html">新增文章</a>
+<a href="sign-in.html" id="login-link">會員登入</a>
+<a href="member.html" id="member-link" hidden>會員資料</a>
+<span id="session-name">
+</span>
+<button id="logout-button" type="button" hidden>登出</button>
+</div>
+</nav>
+</header>
+
+<div id="page-status" class="nv-status container" hidden role="status" aria-live="polite">
+</div>
+<main id="main-content" class="container">
+<section class="nv-section nv-social-section" aria-labelledby="latest-heading">
+<div class="nv-section-heading">
+<div>
+<span class="nv-eyebrow">DISCOVER & SHARE</span>
+<h2 id="latest-heading">最新文章</h2>
+</div>
+<a class="nv-button" href="forum_dopost.html">＋ 新增文章</a>
+</div>
+<div id="latest-posts" class="nv-grid" aria-live="polite">
+</div>
+</section>
+<section class="nv-section nv-social-section">
+<div class="nv-section-heading">
+<div>
+<span class="nv-eyebrow">COMMUNITY PICKS</span>
+<h2>熱門文章</h2>
+</div>
+<small>依讚與倒讚互動數排序</small>
+</div>
+<div id="popular-posts" class="nv-popular">
+</div>
+</section>
+<section class="nv-section nv-social-section">
+<div class="nv-section-heading">
+<div>
+<span class="nv-eyebrow">FIND YOUR COMMUNITY</span>
+<h2>找到你的話題</h2>
+</div>
+</div>
+<div id="category-tabs" class="nv-tabs" aria-label="文章分類">
+</div>
+<div class="nv-table-controls">
+<label for="table-size">顯示 <select id="table-size" aria-controls="category-table">
+<option value="3">3</option>
+<option value="5">5</option>
+<option value="10" selected>10</option>
+<option value="20">20</option>
+<option value="50">50</option>
+<option value="100">100</option>
+</select> 筆結果</label>
+<label for="table-search">搜尋：<input id="table-search" type="search" placeholder="搜尋作者、標題、時間或數值" aria-controls="category-table">
+</label>
+</div>
+<div class="nv-table-wrap">
+<table id="category-table" class="table nv-table">
+<thead>
+<tr>
+<th scope="col" aria-sort="none">
+<button type="button" data-sort="author">作者<span aria-hidden="true"> ↕</span>
+</button>
+</th>
+<th scope="col" aria-sort="none">
+<button type="button" data-sort="title">文章標題<span aria-hidden="true"> ↕</span>
+</button>
+</th>
+<th scope="col" aria-sort="none">
+<button type="button" data-sort="date">發文時間<span aria-hidden="true"> ↕</span>
+</button>
+</th>
+<th scope="col" aria-sort="none">
+<button type="button" data-sort="comments">留言數<span aria-hidden="true"> ↕</span>
+</button>
+</th>
+<th scope="col" aria-sort="none">
+<button type="button" data-sort="hot">熱門度<span aria-hidden="true"> ↕</span>
+</button>
+</th>
+</tr>
+</thead>
+<tbody id="category-posts">
+</tbody>
+</table>
+</div>
+<div class="nv-table-footer">
+<p id="table-info" role="status" aria-live="polite">
+</p>
+<nav class="nv-pagination" aria-label="分類表格分頁">
+<button id="table-first" type="button">第一頁</button>
+<button id="table-prev" type="button">上一頁</button>
+<span id="table-page">
+</span>
+<button id="table-next" type="button">下一頁</button>
+<button id="table-last" type="button">最後一頁</button>
+</nav>
+</div>
+</section>
+</main>
+<footer class="nv-footer">
+<div class="container">
+<a class="nv-logo" href="forum_home.html">NewView</a>
+<p>在藝文裡相遇，在社群裡交流。</p>
+<small>
+<a href="activities.html">探索活動</a> · <a href="forum_home.html">藝文社群</a> · <a href="member.html">會員中心</a>
+<br>NewView 作品展示｜活動、人物、主辦及場地均為虛構。訂單與核銷為模擬，不收款、不提供真實入場資格。</small>
+</div>
+</footer>
+</body>
+</html>

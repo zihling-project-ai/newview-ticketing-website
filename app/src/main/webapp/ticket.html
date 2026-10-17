@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>票券詳情 · NewView</title>
+<link rel="icon" href="assets/portfolio/mark.svg">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/social-reconnect.css">
+<link rel="stylesheet" href="css/portfolio.css?v=20261017-auth-orders-10">
+<script defer src="vendor/jquery/jquery-3.2.1.min.js">
+</script>
+<script defer src="vendor/bootstrap/js/popper.js">
+</script>
+<script defer src="vendor/bootstrap/js/bootstrap.min.js">
+</script>
+<script defer src="js/social-reconnect.js?v=20261017-auth-orders-10">
+</script>
+</head>
+<body>
+<a class="nv-skip" href="#main-content">跳到主要內容</a>
+<header class="nv-header">
+<nav class="nv-nav container" aria-label="主選單">
+<a class="nv-logo" href="forum_home.html">NewView<span>藝文・社群</span>
+</a>
+<button class="nv-menu-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-links">選單 <span aria-hidden="true">☰</span>
+</button>
+<div class="nv-links" id="site-links">
+<a href="activities.html">活動專區</a>
+<a href="checkout_cart.html">購物車</a>
+<a href="forum_home.html">社群首頁</a>
+<a href="forum_dopost.html">新增文章</a>
+<a href="sign-in.html" id="login-link">會員登入</a>
+<a href="member.html" id="member-link" hidden>會員資料</a>
+<span id="session-name">
+</span>
+<button id="logout-button" type="button" hidden>登出</button>
+</div>
+</nav>
+</header>
+
+<div id="page-status" class="nv-status container" hidden role="status" aria-live="polite">
+</div>
+<main id="main-content" class="container nv-member-page">
+<header class="nv-member-heading">
+<span class="nv-eyebrow">YOUR NEWVIEW</span>
+<h1>票券詳情</h1>
+<p>活動與座位資訊，都在這裡。</p>
+</header>
+<div class="nv-member-layout">
+<aside class="nv-member-sidebar">
+<div class="nv-member-identity">
+<span class="nv-member-monogram" aria-hidden="true">N.</span>
+<span>會員中心<small>你的藝文日常</small>
+</span>
+</div>
+<nav aria-label="會員功能">
+<a href="member.html">
+<span aria-hidden="true">◌</span>會員資料</a>
+<a href="myOrder.html">
+<span aria-hidden="true">▤</span>我的訂單</a>
+<a href="my-favourite.html">
+<span aria-hidden="true">♡</span>我的收藏</a>
+<a href="tickets.html" aria-current="page">
+<span aria-hidden="true">▱</span>我的票券</a>
+<a href="my-coupons.html">
+<span aria-hidden="true">◇</span>我的優惠券</a>
+<a href="change-password.html">
+<span aria-hidden="true">⌑</span>修改密碼</a>
+</nav>
+<a class="nv-member-discover" href="activities.html">探索下一場演出 ↗</a>
+</aside>
+<div class="nv-member-content">
+<a href="tickets.html">← 返回我的票券</a>
+<article id="local-ticket" class="nv-form-card" hidden>
+<h1 id="ticket-name">
+</h1>
+<p id="ticket-info">
+</p>
+<dl id="ticket-facts" class="nv-ticket-facts">
+</dl>
+<p>
+<a id="ticket-order-link" class="nv-order-link">查看所屬訂單 →</a>
+<a id="ticket-sibling-link" class="nv-order-link">同筆訂單其他票券 →</a>
+</p>
+<p id="ticket-status" role="status">
+</p>
+<p>模擬票券，非有效入場憑證；不會實際付款。</p>
+<div id="ticket-qr-area" hidden>
+<img id="ticket-qr" width="400" height="400" style="max-width:100%;height:auto" alt="模擬票券 QR Code">
+<p>
+<a id="ticket-download" class="nv-button nv-button-outline" download="NewView-ticket.png">下載票券 QR</a>
+</p>
+<details>
+<summary>查看票券碼</summary>
+<label for="ticket-payload">票券碼（展示）</label>
+<textarea id="ticket-payload" class="form-control" readonly rows="3">
+</textarea>
+</details>
+<a id="ticket-redeem-link" class="nv-button">前往核銷</a>
+</div>
+<section id="ticket-review-section">
+<h2>活動評價</h2>
+<p>每張已完成模擬核銷的票券限評一次，送出後保留原文。</p>
+<div id="ticket-review-display" aria-live="polite">
+</div>
+<form id="ticket-review-form" hidden>
+<label for="review-rating">評分</label>
+<select id="review-rating" required>
+<option value="">請選擇</option>
+<option value="5">5 星</option>
+<option value="4">4 星</option>
+<option value="3">3 星</option>
+<option value="2">2 星</option>
+<option value="1">1 星</option>
+</select>
+<label for="review-content">評論（最多 255 字）</label>
+<textarea id="review-content" class="form-control" maxlength="255" required rows="4">
+</textarea>
+<button id="review-submit" class="nv-button" type="submit">送出活動評價</button>
+</form>
+</section>
+</article>
+</div>
+</div>
+</main>
+<footer class="nv-footer">
+<div class="container">
+<a class="nv-logo" href="forum_home.html">NewView</a>
+<p>在藝文裡相遇，在社群裡交流。</p>
+<small>
+<a href="activities.html">探索活動</a> · <a href="forum_home.html">藝文社群</a> · <a href="member.html">會員中心</a>
+<br>NewView 作品展示｜活動、人物、主辦及場地均為虛構。訂單與核銷為模擬，不收款、不提供真實入場資格。</small>
+</div>
+</footer>
+</body>
+</html>

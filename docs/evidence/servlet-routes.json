@@ -1,0 +1,154 @@
+[
+  {
+    "endpoint": "/GetPostServlet",
+    "class": "com.newview.post.controller.GetPostServlet"
+  },
+  {
+    "endpoint": "/GetPostDetailServlet",
+    "class": "com.newview.post.controller.GetPostDetailServlet"
+  },
+  {
+    "endpoint": "/GetPostCategoryServlet",
+    "class": "com.newview.post.controller.GetPostCategoryServlet"
+  },
+  {
+    "endpoint": "/GetMemberSession",
+    "class": "com.newview.post.controller.GetMemberSession"
+  },
+  {
+    "endpoint": "/VerifyPostMember",
+    "class": "com.newview.post.controller.VerifyPostMember"
+  },
+  {
+    "endpoint": "/DoPostServlet",
+    "class": "com.newview.post.controller.DoPostServlet"
+  },
+  {
+    "endpoint": "/DeletePostServlet",
+    "class": "com.newview.post.controller.DeletePostServlet"
+  },
+  {
+    "endpoint": "/DoLikeDislikeServlet",
+    "class": "com.newview.post.controller.DoLikeDislikeServlet"
+  },
+  {
+    "endpoint": "/DoMessageServlet",
+    "class": "com.newview.postmessage.controller.DoMessageServlet"
+  },
+  {
+    "endpoint": "/SignIn",
+    "class": "com.newview.user.controller.SignInController"
+  },
+  {
+    "endpoint": "/RecoverySession",
+    "class": "com.newview.recovery.RecoverySession"
+  },
+  {
+    "endpoint": "/SignUp",
+    "class": "com.newview.recovery.MemberController"
+  },
+  {
+    "endpoint": "/GetUserInfo",
+    "class": "com.newview.recovery.MemberController"
+  },
+  {
+    "endpoint": "/UpdateUserInfo",
+    "class": "com.newview.recovery.MemberController"
+  },
+  {
+    "endpoint": "/UpdateUserPassword",
+    "class": "com.newview.recovery.PasswordController"
+  },
+  {
+    "endpoint": "/RetrievePassword",
+    "class": "com.newview.recovery.PasswordController"
+  },
+  {
+    "endpoint": "/VerifyPassword",
+    "class": "com.newview.recovery.PasswordController"
+  },
+  {
+    "endpoint": "/MemberPage",
+    "class": "com.newview.recovery.MemberLibraryController"
+  },
+  {
+    "endpoint": "/MemberOrders",
+    "class": "com.newview.recovery.MemberLibraryController"
+  },
+  {
+    "endpoint": "/MemberFavorites",
+    "class": "com.newview.recovery.MemberLibraryController"
+  },
+  {
+    "endpoint": "/MemberActivities",
+    "class": "com.newview.recovery.MemberLibraryController"
+  },
+  {
+    "endpoint": "/MemberActivityImage",
+    "class": "com.newview.recovery.MemberLibraryController"
+  },
+  {
+    "endpoint": "/likeChange",
+    "class": "com.newview.recovery.MemberLibraryController"
+  },
+  {
+    "endpoint": "/ActivityList",
+    "class": "com.newview.recovery.ActivityController"
+  },
+  {
+    "endpoint": "/ActivityDetail",
+    "class": "com.newview.recovery.ActivityController"
+  },
+  {
+    "endpoint": "/ActivityImage",
+    "class": "com.newview.recovery.ActivityController"
+  },
+  {
+    "endpoint": "/Cart",
+    "class": "com.newview.recovery.CartController"
+  },
+  {
+    "endpoint": "/LocalCheckout",
+    "class": "com.newview.recovery.CartController"
+  },
+  {
+    "endpoint": "/Seats",
+    "class": "com.newview.recovery.SeatController"
+  },
+  {
+    "endpoint": "/CancelLocalOrder",
+    "class": "com.newview.recovery.CancelOrderController"
+  },
+  {
+    "endpoint": "/Tickets",
+    "class": "com.newview.recovery.TicketController"
+  },
+  {
+    "endpoint": "/TicketQR",
+    "class": "com.newview.recovery.TicketController"
+  },
+  {
+    "endpoint": "/RedeemLocalTicket",
+    "class": "com.newview.recovery.TicketController"
+  },
+  {
+    "endpoint": "/TicketReview",
+    "class": "com.newview.recovery.ReviewController"
+  },
+  {
+    "endpoint": "/ActivityReviews",
+    "class": "com.newview.recovery.ReviewController"
+  },
+  {
+    "endpoint": "/MemberCoupons",
+    "class": "com.newview.recovery.CouponController"
+  },
+  {
+    "endpoint": "/PreviewTicket",
+    "class": "com.newview.recovery.TicketController"
+  },
+  {
+    "endpoint": "/DecodeTicketQR",
+    "class": "com.newview.recovery.TicketController"
+  }
+]

@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import time,json,concurrent.futures
+ROOT=next(p for p in Path(__file__).resolve().parents if (p/'app/pom.xml').is_file())
+exec((ROOT/'tests/verify_tickets.py').read_text().split('try:\n a=register')[0])
+prefix='review_'+str(time.time_ns());accounts=[prefix+'a',prefix+'b'];ids=[];activities=[];trigger='review_fault_'+str(time.time_ns());act=None
+
+def review(c,t,expected=201,**values):
+ return c.call('TicketReview',dict(ticketID=t,rating=values.pop('rating','5'),content=values.pop('content','本機合成評論'),**values),expected=expected)
+def state(c,t):return c.call('TicketReview?ticketID='+str(t))
+try:
+ a=register(accounts[0]);b=register(accounts[1]);anon=Client()
+ act=int(sql(f"INSERT INTO act(actName,actPrice) VALUES('{prefix}',100);SELECT LAST_INSERT_ID();"));activities=[act]
+ order,ts=purchase(a,5);t=ts[0]
+ check('Anonymous review read rejected',lambda:anon.call('TicketReview?ticketID='+str(t),expected=401))
+ check('Anonymous review write rejected',lambda:review(anon,t,401))
+ check('Other owner read rejected',lambda:b.call('TicketReview?ticketID='+str(t),expected=404))
+ check('Other owner write rejected',lambda:review(b,t,404))
+ check('Unused ticket cannot review',lambda:review(a,t,409))
+ check('Unused ticket has no form permission',lambda:must(not state(a,t)['canReview']))
+ check('Empty public summary',lambda:must(anon.call('ActivityReviews?actID='+str(act))['count']==0))
+ check('Public endpoint rejects mutation',lambda:a.call('ActivityReviews',dict(actID=act),expected=405))
+ check('Malformed ticket rejected',lambda:a.call('TicketReview?ticketID=abc',expected=400))
+ check('Missing activity rejected',lambda:anon.call('ActivityReviews?actID=2147483647',expected=404))
+ redeem(a,payload(a,t))
+ check('Redeemed partial order can review',lambda:must(state(a,t)['canReview']))
+ check('CSRF required',lambda:a.call('TicketReview',dict(ticketID=t,rating=5,content='測試'),csrf=False,expected=403))
+ for rating in ['0','6','1.5','five','']:
+  check('Invalid rating '+repr(rating),lambda rating=rating:review(a,t,400,rating=rating))
+ for content in ['', '   ','x'*256,'a\x01b']:
+  check('Invalid content '+str(len(content)),lambda content=content:review(a,t,400,content=content))
+ check('Reads do not write review',lambda:must(not state(a,t)['reviewed']))
+ check('Owned redeemed ticket accepts review ignoring forged member/activity',lambda:review(a,t,userID=ids[1],actID=2147483647,content='<script>window.reviewInjected=true</script> 合成測試'))
+ before=state(a,t)
+ check('Review stored and no longer writable',lambda:must(before['reviewed'] and not before['canReview'] and before['rating']==5))
+ check('Duplicate review rejected',lambda:review(a,t,409,rating='1'))
+ check('Duplicate preserves content and time',lambda:must(state(a,t)==before))
+ summary=anon.call('ActivityReviews?actID='+str(act))
+ check('Public average and count correct',lambda:must(summary['count']==1 and summary['average']==5))
+ check('Public review exposes no identity/order/token fields',lambda:must(set(summary['reviews'][0])=={'rating','content','reviewedAt','author'}))
+ check('Markup preserved as plain text',lambda:must(summary['reviews'][0]['content'].startswith('<script>')))
+ t2=ts[1];redeem(a,payload(a,t2))
+ data=dict(ticketID=t2,rating=3,content='並發評論')
+ with concurrent.futures.ThreadPoolExecutor(2) as pool:race=list(pool.map(lambda _:raw(a,'TicketReview',data),range(2)))
+ check('Concurrent review inserts exactly once',lambda:must(sorted(x[0] for x in race)==[201,409]))
+ check('Average includes each ticket exactly once',lambda:must(anon.call('ActivityReviews?actID='+str(act))['average']==4))
+ cancelled,ct=purchase(a);cancel(a,cancelled)
+ check('Cancelled ticket cannot review',lambda:review(a,ct[0],409))
+ check('Cancelled ticket excluded',lambda:must(anon.call('ActivityReviews?actID='+str(act))['count']==2))
+ t3=ts[2];sql(f'UPDATE orderlist SET usedType=1 WHERE orderListID={t3};')
+ check('Used flag without genuine local redemption rejected',lambda:review(a,t3,409))
+ sql(f'UPDATE orderlist SET usedType=0 WHERE orderListID={t3};');redeem(a,payload(a,t3))
+ trigger_sql(f"DELIMITER //\nCREATE TRIGGER {trigger} BEFORE UPDATE ON orderlist FOR EACH ROW BEGIN IF NEW.orderListID={t3} AND NEW.localReviewedAt IS NOT NULL THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Synthetic review rollback'; END IF; END//\nDELIMITER ;\n")
+ check('Injected SQL failure rejected',lambda:review(a,t3,500))
+ check('Failure rolls back all review fields',lambda:must(not state(a,t3)['reviewed'] and state(a,t3)['canReview']))
+ trigger_sql('DROP TRIGGER '+trigger+';')
+ check('Retry accepts exact 255 characters',lambda:review(a,t3,content='x'*255))
+ legacy=int(sql(f'INSERT INTO orders(userID,ordType,ordTotal,actQuantity) VALUES({ids[0]},1,100,1);SELECT LAST_INSERT_ID();'))
+ lt=int(sql(f'INSERT INTO orderlist(orderID,actID,actTotal,usedType,localRedeemedAt) VALUES({legacy},{act},100,1,NOW());SELECT LAST_INSERT_ID();'))
+ check('Unmarked historical ticket rejected',lambda:review(a,lt,409))
+ sql(f"UPDATE orderlist SET fiveStarReview=4,reviewContent='Historical review' WHERE orderListID={lt};")
+ check('Historical review not overwritten',lambda:review(a,lt,409))
+ check('Unverified historical review not publicly counted',lambda:must(anon.call('ActivityReviews?actID='+str(act))['count']==3))
+ sql(f'UPDATE orders SET ordType=2 WHERE orderID={order};')
+ check('Cancelled order hides already stored reviews',lambda:must(anon.call('ActivityReviews?actID='+str(act))['count']==0))
+ check('Cancelled redeemed ticket cannot add review',lambda:review(a,ts[3],409))
+finally:
+ trigger_sql('DROP TRIGGER IF EXISTS '+trigger+';')
+ if ids:
+  users=','.join(map(str,ids));sql(f'DELETE m FROM local_simulation_order m JOIN orders o ON o.orderID=m.orderID WHERE o.userID IN ({users});DELETE l FROM orderlist l JOIN orders o ON o.orderID=l.orderID WHERE o.userID IN ({users});DELETE FROM orders WHERE userID IN ({users});DELETE FROM local_checkout_receipt WHERE userID IN ({users});DELETE FROM cartact WHERE userID IN ({users});DELETE FROM user WHERE userID IN ({users});')
+ if act:sql(f'DELETE FROM act WHERE actID={act};')
+ (ROOT/'docs/review-verification.json').write_text(json.dumps(results,ensure_ascii=False,indent=2))
+print('Review checks passed:',len(results))

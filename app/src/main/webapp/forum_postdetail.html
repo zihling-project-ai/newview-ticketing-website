@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>文章內容 · NewView</title>
+<link rel="icon" href="assets/portfolio/mark.svg">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/social-reconnect.css">
+<link rel="stylesheet" href="css/portfolio.css?v=20261017-auth-orders-10">
+<script defer src="vendor/jquery/jquery-3.2.1.min.js">
+</script>
+<script defer src="vendor/bootstrap/js/popper.js">
+</script>
+<script defer src="vendor/bootstrap/js/bootstrap.min.js">
+</script>
+<script defer src="js/social-reconnect.js?v=20261017-auth-orders-10">
+</script>
+</head>
+<body>
+<a class="nv-skip" href="#main-content">跳到主要內容</a>
+<header class="nv-header">
+<nav class="nv-nav container" aria-label="主選單">
+<a class="nv-logo" href="forum_home.html">NewView<span>藝文・社群</span>
+</a>
+<button class="nv-menu-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-links">選單 <span aria-hidden="true">☰</span>
+</button>
+<div class="nv-links" id="site-links">
+<a href="activities.html">活動專區</a>
+<a href="checkout_cart.html">購物車</a>
+<a href="forum_home.html">社群首頁</a>
+<a href="forum_dopost.html">新增文章</a>
+<a href="sign-in.html" id="login-link">會員登入</a>
+<a href="member.html" id="member-link" hidden>會員資料</a>
+<span id="session-name">
+</span>
+<button id="logout-button" type="button" hidden>登出</button>
+</div>
+</nav>
+</header>
+
+<div id="page-status" class="nv-status container" hidden role="status" aria-live="polite">
+</div>
+<main id="main-content" class="container nv-social-detail">
+<a class="nv-back" href="forum_home.html">← 返回社群</a>
+<article class="nv-article nv-story-article">
+<div class="nv-article-head">
+<span id="cate" class="nv-tag">
+</span>
+<h1 id="postHeader">載入文章中…</h1>
+<p class="nv-story-byline">
+<span id="post-author-avatar" aria-hidden="true">
+</span>
+<span id="name">
+</span> · <time id="day2">
+</time>
+<span id="edited-date">
+</span>
+</p>
+</div>
+<div id="picturearea" hidden>
+<div id="myCarousel" class="carousel slide" data-interval="false">
+<div class="carousel-inner">
+</div>
+<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" aria-label="上一張圖片">
+<span class="carousel-control-prev-icon" aria-hidden="true">
+</span>
+</a>
+<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" aria-label="下一張圖片">
+<span class="carousel-control-next-icon" aria-hidden="true">
+</span>
+</a>
+</div>
+<p id="image-caption" class="nv-muted">
+</p>
+</div>
+<p id="postContent" class="nv-post-content">
+</p>
+<div class="nv-article-actions">
+<div>
+<button id="likeButton" type="button" class="nv-reaction">讚 <span id="likeCount">0</span>
+</button>
+<button id="dislikeButton" type="button" class="nv-reaction">倒讚 <span id="dislikeCount">0</span>
+</button>
+</div>
+<div id="author-actions" hidden>
+<a id="modifyButton" class="nv-button nv-button-outline">修改文章</a>
+<button id="deleteButton" type="button" class="nv-button nv-button-outline">刪除文章</button>
+</div>
+</div>
+</article>
+<section class="nv-comments">
+<span class="nv-eyebrow">KEEP THE CONVERSATION GOING</span>
+<h2>留言交流 <span id="messageCount">0</span>
+</h2>
+<p id="login-prompt" hidden>登入後就可以留言囉。<a id="comment-login" href="sign-in.html">前往登入 →</a>
+</p>
+<form id="comment-form" hidden>
+<label for="mesContent">新增留言</label>
+<textarea class="form-control" id="mesContent" name="mesContent" maxlength="1000" required rows="3" placeholder="分享你的想法…">
+</textarea>
+<button id="postCommentButton" type="submit" class="nv-button">送出留言</button>
+</form>
+<div id="commentsContainer">
+</div>
+</section>
+</main>
+<footer class="nv-footer">
+<div class="container">
+<a class="nv-logo" href="forum_home.html">NewView</a>
+<p>在藝文裡相遇，在社群裡交流。</p>
+<small>
+<a href="activities.html">探索活動</a> · <a href="forum_home.html">藝文社群</a> · <a href="member.html">會員中心</a>
+<br>NewView 作品展示｜活動、人物、主辦及場地均為虛構。訂單與核銷為模擬，不收款、不提供真實入場資格。</small>
+</div>
+</footer>
+</body>
+</html>

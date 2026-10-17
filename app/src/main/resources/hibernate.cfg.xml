@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3309/newview_recovery?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Taipei</property>
+		<property name="hibernate.connection.password">LOCAL_CONFIGURATION_REQUIRED</property>
+		<property name="hibernate.connection.username">newview</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+<!-- 		<property name="hibernate.show_sql">true</property> -->
+		<property name="hibernate.format_sql">false</property>
+		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<mapping class="com.newview.user.model.UserVO"/>
+        <mapping class="com.newview.usediscount.model.UseDiscountVO"/>
+        <mapping class="com.newview.report.model.ReportVO"/>
+        <mapping class="com.newview.likes.model.LikesVO"/>
+        
+        <mapping class="com.newview.mylike.model.MyLikeVO"></mapping>
+        <mapping class="com.newview.orders.model.OrdersVO"></mapping>
+        <mapping class="com.newview.discount.model.DiscountVO"></mapping>
+        
+        <mapping class="com.newview.act.model.ActVO"/>
+        <mapping class="com.newview.actcategory.model.ActCategory"/>
+        <mapping class="com.newview.actpic.model.ActPic"/>
+        <mapping class="com.newview.cityaddress.model.CityAddress"/>
+        
+        <mapping class="com.newview.pubuser.model.PubUserVO" />
+        <mapping class="com.newview.publisher.model.PublisherVO" />
+        <mapping class="com.newview.admin.model.AdminVO" />
+        
+        <mapping class="com.newview.postcategory.model.PostCategoryVO" />
+        <mapping class="com.newview.postmessage.model.PostMessageVO" />
+        <mapping class="com.newview.post.model.PostVO" />
+        <mapping class="com.newview.postpic.model.PostPicVO" />
+        
+        <mapping class="com.newview.cartact.model.CartActVO"/>
+        <mapping class="com.newview.compic.model.ComPicVO"/>
+        <mapping class="com.newview.orderlist.model.OrderListVO"/>
+        
+        <mapping class="com.newview.orders.model.Act" />
+        <mapping class="com.newview.orders.model.ActPic" />
+        <mapping class="com.newview.orders.model.Orders" />
+        <mapping class="com.newview.orders.model.Orderlist" />
+        <mapping class="com.newview.orders.model.ComPic" />
+        <mapping class="com.newview.orders.model.Publisher" />
+	</session-factory>
+</hibernate-configuration>

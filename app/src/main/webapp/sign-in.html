@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>會員登入 · NewView</title>
+<link rel="icon" href="assets/portfolio/mark.svg">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/social-reconnect.css">
+<link rel="stylesheet" href="css/portfolio.css?v=20261017-auth-orders-10">
+<script defer src="vendor/jquery/jquery-3.2.1.min.js">
+</script>
+<script defer src="vendor/bootstrap/js/popper.js">
+</script>
+<script defer src="vendor/bootstrap/js/bootstrap.min.js">
+</script>
+<script defer src="js/social-reconnect.js?v=20261017-auth-orders-10">
+</script>
+</head>
+<body>
+<a class="nv-skip" href="#main-content">跳到主要內容</a>
+<header class="nv-header">
+<nav class="nv-nav container" aria-label="主選單">
+<a class="nv-logo" href="forum_home.html">NewView<span>藝文・社群</span>
+</a>
+<button class="nv-menu-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-links">選單 <span aria-hidden="true">☰</span>
+</button>
+<div class="nv-links" id="site-links">
+<a href="activities.html">活動專區</a>
+<a href="checkout_cart.html">購物車</a>
+<a href="forum_home.html">社群首頁</a>
+<a href="forum_dopost.html">新增文章</a>
+<a href="sign-in.html" id="login-link">會員登入</a>
+<a href="member.html" id="member-link" hidden>會員資料</a>
+<span id="session-name">
+</span>
+<button id="logout-button" type="button" hidden>登出</button>
+</div>
+</nav>
+</header>
+
+<div id="page-status" class="nv-status container" hidden role="status" aria-live="polite">
+</div>
+<main id="main-content" class="container nv-auth-page">
+<a class="nv-auth-back" href="activities.html">← 返回探索活動</a>
+<div class="nv-auth-layout">
+<aside class="nv-auth-story">
+<span class="nv-eyebrow">WELCOME TO NEWVIEW</span>
+<h2>讓每一次相遇，<br>都有下文。</h2>
+<p>收藏喜歡的演出，留下散場後的心情。</p>
+<div class="nv-auth-art" aria-hidden="true">
+<span>N.</span>
+</div>
+<small>NEW VIEW, NEW CONNECTIONS</small>
+</aside>
+<div class="nv-auth-form-area">
+<section class="nv-form-card">
+<span class="nv-eyebrow">WELCOME BACK</span>
+<h1>歡迎回來</h1>
+<p class="nv-muted">登入 NewView，與同好繼續交流。</p>
+<form id="login-form">
+<div class="form-group">
+<label for="account">帳號</label>
+<input class="form-control" id="account" name="account" autocomplete="username" placeholder="請輸入帳號" required>
+</div>
+<div class="form-group">
+<label for="password">密碼</label>
+<input class="form-control" id="password" name="password" type="password" autocomplete="current-password" placeholder="請輸入密碼" required>
+</div>
+<button type="submit" class="nv-button" id="commit">登入</button>
+</form>
+<p>
+<a href="sign-up.html">建立會員帳號 →</a> · <a href="forgot-password.html">忘記密碼？</a>
+</p>
+</section>
+</div>
+</div>
+</main>
+<footer class="nv-footer">
+<div class="container">
+<a class="nv-logo" href="forum_home.html">NewView</a>
+<p>在藝文裡相遇，在社群裡交流。</p>
+<small>
+<a href="activities.html">探索活動</a> · <a href="forum_home.html">藝文社群</a> · <a href="member.html">會員中心</a>
+<br>NewView 作品展示｜活動、人物、主辦及場地均為虛構。訂單與核銷為模擬，不收款、不提供真實入場資格。</small>
+</div>
+</footer>
+</body>
+</html>

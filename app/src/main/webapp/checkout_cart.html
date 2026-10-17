@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>購物車與模擬結帳 · NewView</title>
+<link rel="icon" href="assets/portfolio/mark.svg">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/social-reconnect.css">
+<link rel="stylesheet" href="css/portfolio.css?v=20261017-auth-orders-10">
+<script defer src="vendor/jquery/jquery-3.2.1.min.js">
+</script>
+<script defer src="vendor/bootstrap/js/popper.js">
+</script>
+<script defer src="vendor/bootstrap/js/bootstrap.min.js">
+</script>
+<script defer src="js/social-reconnect.js?v=20261017-auth-orders-10">
+</script>
+</head>
+<body>
+<a class="nv-skip" href="#main-content">跳到主要內容</a>
+<header class="nv-header">
+<nav class="nv-nav container" aria-label="主選單">
+<a class="nv-logo" href="forum_home.html">NewView<span>藝文・社群</span>
+</a>
+<button class="nv-menu-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-links">選單 <span aria-hidden="true">☰</span>
+</button>
+<div class="nv-links" id="site-links">
+<a href="activities.html">活動專區</a>
+<a href="checkout_cart.html">購物車</a>
+<a href="forum_home.html">社群首頁</a>
+<a href="forum_dopost.html">新增文章</a>
+<a href="sign-in.html" id="login-link">會員登入</a>
+<a href="member.html" id="member-link" hidden>會員資料</a>
+<span id="session-name">
+</span>
+<button id="logout-button" type="button" hidden>登出</button>
+</div>
+</nav>
+</header>
+
+<div id="page-status" class="nv-status container" hidden role="status" aria-live="polite">
+</div>
+<main id="main-content" class="container nv-cart-page">
+<header class="nv-cart-heading">
+<div>
+<span class="nv-eyebrow">YOUR NEXT EXPERIENCE</span>
+<h1>我的購物車<span id="cart-item-count" class="nv-cart-count">
+</span>
+</h1>
+<p>把期待留給下一場相遇。</p>
+</div>
+<a href="activities.html" class="nv-cart-back">繼續探索活動 ↗</a>
+</header>
+<ol class="nv-checkout-steps" aria-label="購票流程">
+<li aria-current="step">
+<span>01</span> 確認活動</li>
+<li>
+<span>02</span> 建立訂單</li>
+<li>
+<span>03</span> 查看票券</li>
+</ol>
+<div class="nv-cart-layout">
+<section class="nv-cart-list" aria-label="購物車活動">
+<div class="nv-cart-toolbar" id="cart-toolbar">
+<label class="nv-select-all">
+<input id="cart-select-all" type="checkbox"> 全選活動</label>
+<span>依主辦單位分組結帳</span>
+</div>
+<div id="cart-items" aria-live="polite">
+</div>
+<div class="nv-cart-footnote">
+<p>指定座位保留 10 分鐘，逾時需重新選位。</p>
+<p>同主辦單位合併訂單，不同主辦單位分開建單；未勾選活動會留在購物車。</p>
+</div>
+</section>
+<aside class="nv-cart-summary" aria-label="結帳摘要">
+<h2>結帳摘要</h2>
+<p id="cart-summary-selection" class="nv-muted">
+</p>
+<div class="nv-cart-coupon">
+<label for="cart-coupon">會員優惠券</label>
+<select id="cart-coupon" class="form-control">
+<option value="0">不使用優惠券</option>
+</select>
+<details>
+<summary>優惠券使用說明</summary>
+<p>每次限一張固定金額券。廠商券只折抵該主辦單位；全站券限單一主辦單位。預覽不扣券，結帳成功才使用。</p>
+<a href="my-coupons.html">查看我的優惠券 →</a>
+</details>
+</div>
+<dl class="nv-cart-totals">
+<div>
+<dt>活動金額</dt>
+<dd id="cart-subtotal">—</dd>
+</div>
+<div class="nv-cart-saving">
+<dt>優惠折抵</dt>
+<dd id="cart-reduction">—</dd>
+</div>
+</dl>
+<p id="cart-discount" class="nv-visually-hidden">
+</p>
+<p class="nv-cart-pay-label">本次結帳金額</p>
+<p id="cart-total" class="nv-cart-payable">
+</p>
+<p id="cart-hold-note" class="nv-cart-hold-note" role="status" hidden>
+</p>
+<p id="cart-problem" class="nv-cart-problem" role="alert" hidden>
+</p>
+<form id="checkout-form">
+<label class="nv-cart-confirm">
+<input type="checkbox" id="confirm-simulation" required>
+<span>我了解此為展示訂單，不會實際付款或取得有效入場票券。</span>
+</label>
+<button id="checkout-submit" type="submit" class="nv-button">確認結帳</button>
+</form>
+<p class="nv-cart-summary-note">每個活動最多 10 張，每次結帳最多 50 張。</p>
+</aside>
+</div>
+</main>
+<footer class="nv-footer">
+<div class="container">
+<a class="nv-logo" href="forum_home.html">NewView</a>
+<p>在藝文裡相遇，在社群裡交流。</p>
+<small>
+<a href="activities.html">探索活動</a> · <a href="forum_home.html">藝文社群</a> · <a href="member.html">會員中心</a>
+<br>NewView 作品展示｜活動、人物、主辦及場地均為虛構。訂單與核銷為模擬，不收款、不提供真實入場資格。</small>
+</div>
+</footer>
+</body>
+</html>

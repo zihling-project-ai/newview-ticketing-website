@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>發表文章 · NewView</title>
+<link rel="icon" href="assets/portfolio/mark.svg">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/social-reconnect.css">
+<link rel="stylesheet" href="css/portfolio.css?v=20261017-auth-orders-10">
+<script defer src="vendor/jquery/jquery-3.2.1.min.js">
+</script>
+<script defer src="vendor/bootstrap/js/popper.js">
+</script>
+<script defer src="vendor/bootstrap/js/bootstrap.min.js">
+</script>
+<script defer src="js/social-reconnect.js?v=20261017-auth-orders-10">
+</script>
+</head>
+<body>
+<a class="nv-skip" href="#main-content">跳到主要內容</a>
+<header class="nv-header">
+<nav class="nv-nav container" aria-label="主選單">
+<a class="nv-logo" href="forum_home.html">NewView<span>藝文・社群</span>
+</a>
+<button class="nv-menu-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-links">選單 <span aria-hidden="true">☰</span>
+</button>
+<div class="nv-links" id="site-links">
+<a href="activities.html">活動專區</a>
+<a href="checkout_cart.html">購物車</a>
+<a href="forum_home.html">社群首頁</a>
+<a href="forum_dopost.html">新增文章</a>
+<a href="sign-in.html" id="login-link">會員登入</a>
+<a href="member.html" id="member-link" hidden>會員資料</a>
+<span id="session-name">
+</span>
+<button id="logout-button" type="button" hidden>登出</button>
+</div>
+</nav>
+</header>
+
+<div id="page-status" class="nv-status container" hidden role="status" aria-live="polite">
+</div>
+<main id="main-content" class="container nv-social-editor">
+<a class="nv-back" href="forum_home.html">← 返回社群</a>
+<div class="nv-social-editor-layout">
+<section class="nv-form-card nv-story-editor">
+<span class="nv-eyebrow">SHARE YOUR STORY</span>
+<h1>發表文章</h1>
+<p class="nv-muted">與同好分享你看見的風景。圖片可不附，文章以純文字呈現。</p>
+<form id="postform">
+<div class="form-group">
+<label for="posttitle">文章標題<span id="post-title-count" class="nv-editor-count">0 / 100</span>
+</label>
+<input class="form-control" id="posttitle" name="postHeader" required maxlength="100" placeholder="為這次分享下一個標題">
+</div>
+<div class="form-group">
+<label for="postcategory">文章類別</label>
+<select class="form-control" id="postcategory" name="postCategoryID" required>
+</select>
+</div>
+<div class="form-group">
+<label for="postcontent">文章內容<span id="post-content-count" class="nv-editor-count">0 / 10000</span>
+</label>
+<textarea class="form-control" id="postcontent" name="postContent" required maxlength="10000" rows="9" placeholder="寫下你的心得與發現…">
+</textarea>
+</div>
+<fieldset class="nv-upload">
+<legend>文章圖片</legend>
+<label for="postimages" class="nv-drop">點選或拖曳 PNG / JPEG 圖片至此<input type="file" id="postimages" accept="image/png,image/jpeg" multiple>
+</label>
+<p class="nv-muted">最多 3 張，每張 2 MB，支援 PNG / JPEG。</p>
+<div id="image-previews" class="nv-previews">
+</div>
+</fieldset>
+<div class="nv-form-actions">
+<a href="forum_home.html">取消</a>
+<button id="submitpost" type="submit" class="nv-button">發表文章</button>
+</div>
+</form>
+</section>
+<aside class="nv-story-writing-note">
+<span class="nv-eyebrow">A LITTLE INSPIRATION</span>
+<h2>從一個片刻開始</h2>
+<p>哪段旋律還留在耳邊？<br>哪個畫面讓你捨不得散場？</p>
+<p>心得、提問，或想找到同好的心情，都值得被分享。</p>
+<div>
+<strong>分享前的小提醒</strong>
+<p>選擇合適分類，讓同好更容易找到你。</p>
+<p>加一張照片，讓文字多一點現場感；沒有圖片也可以分享。</p>
+<p>也可以留下一個問題，讓同好接著聊下去。</p>
+</div>
+</aside>
+</div>
+</main>
+<footer class="nv-footer">
+<div class="container">
+<a class="nv-logo" href="forum_home.html">NewView</a>
+<p>在藝文裡相遇，在社群裡交流。</p>
+<small>
+<a href="activities.html">探索活動</a> · <a href="forum_home.html">藝文社群</a> · <a href="member.html">會員中心</a>
+<br>NewView 作品展示｜活動、人物、主辦及場地均為虛構。訂單與核銷為模擬，不收款、不提供真實入場資格。</small>
+</div>
+</footer>
+</body>
+</html>
