@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-18",
+  "repository": "zihling-project-ai/newview-ticketing-website",
+  "method": "GitHub REST API and raw.githubusercontent.com requests without authentication headers or cookies",
+  "repository_http_status": 200,
+  "private": false,
+  "visibility": "public",
+  "default_branch": "main",
+  "anonymous_raw_http_status": {
+    "README.md": 200,
+    "app/pom.xml": 200,
+    "docs/FONT_REVIEW.md": 200
+  },
+  "scope": "Repository/source visibility only; not public website deployment",
+  "owner_confirmation": "No templates or materials outside the course; team/course sharing permission confirmed"
+}

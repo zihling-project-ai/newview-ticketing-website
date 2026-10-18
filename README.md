@@ -82,10 +82,10 @@ python3 scripts/setup/seed_portfolio_orders.py
 - [ERD、資料字典與介面](docs/data-and-interfaces.md)
 - [執行與驗證](docs/setup-and-validation.md)
 - [第三方素材與授權](docs/THIRD_PARTY_NOTICES.md)
-- [公開前狀態與待確認事項](docs/PUBLICATION_REVIEW.md)
+- [公開狀態與檢查紀錄](docs/PUBLICATION_REVIEW.md)
 - [相依套件檢查](docs/DEPENDENCY_REVIEW.md)
 
-原始碼已上傳至私人 GitHub 儲存庫，尚未公開；網站仍為本機展示。真實交易、後台營運、有限站票庫存、壓力測試及正式部署不在本機展示範圍；團隊與課程內容已由維護者確認可公開分享；第三方素材授權與套件安全檢查狀態見公開前文件。
+原始碼已公開於 [GitHub](https://github.com/zihling-project-ai/newview-ticketing-website)；網站仍為本機展示，下載後須依啟動文件自行建立環境。真實交易、後台營運、有限站票庫存、壓力測試及正式部署不在本機展示範圍；團隊與課程內容已由維護者確認可公開分享；維護者另確認未使用課程以外的模板或素材；第三方函式庫、字型授權與套件安全檢查範圍見公開檢查文件。
 
 ## 前端維護方式
 
