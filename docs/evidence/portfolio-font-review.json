@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-18",
+  "method": "Existing geometric artwork re-rendered with Noto Sans TC; no system font used in these PNGs; font binary remains outside source repository.",
+  "font": {
+    "name": "Noto Sans TC",
+    "source": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/Variable/TTF/Subset/NotoSansTC-VF.ttf",
+    "sha256": "ac091cc8cd19e848202afc8fe6d3809b4526c8fdbdb4be82da20c4f785949591",
+    "license": "SIL OFL 1.1",
+    "license_source": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/LICENSE",
+    "weight": 500
+  },
+  "files": [
+    {
+      "file": "app/src/main/webapp/assets/portfolio/hero-1.png",
+      "sha256": "32f53002d0cbb3362240f03c482facdfe1278b87dd066434d20fd4ed8ffc3261"
+    },
+    {
+      "file": "app/src/main/webapp/assets/portfolio/hero-2.png",
+      "sha256": "07a5bd2668a4182c0a9e8bae6a06e40c1c365f3f4f9c61ab35c5011813fabbbe"
+    },
+    {
+      "file": "app/src/main/webapp/assets/portfolio/hero-3.png",
+      "sha256": "a4fb8f4e9da0f2e939a0064272c76c348b3ed2258bb17291cbb570a507e7a00a"
+    },
+    {
+      "file": "app/src/main/webapp/assets/portfolio/poster-1.png",
+      "sha256": "fa2ca5e2cec9a8747cb3dcffc8eba04baaf8c3af11b21378842b188cd31e2094"
+    },
+    {
+      "file": "app/src/main/webapp/assets/portfolio/poster-2.png",
+      "sha256": "68779a003343afe22ca0577da3d8b122622a1bdc97ac04e98cf41058f68aaa29"
+    },
+    {
+      "file": "app/src/main/webapp/assets/portfolio/poster-3.png",
+      "sha256": "182ed158ebd22a322da18c772bf3a885af5d96f0c6328eb6d7c9a65f66b34bc5"
+    },
+    {
+      "file": "app/src/main/webapp/assets/portfolio/poster-4.png",
+      "sha256": "f1582c142343349ebc26c92e57a380f82a53d41a936ec53c6e249de566c6bb8f"
+    },
+    {
+      "file": "app/src/main/webapp/assets/portfolio/poster-5.png",
+      "sha256": "4d424ade1210b87e36ba0e2ce5baf6d298a0453eb858041c79c0f47f9bcab967"
+    },
+    {
+      "file": "app/src/main/webapp/assets/portfolio/poster-6.png",
+      "sha256": "0580bcd1027a0b85586e74af6b7b96622f9b8eb57fcf391725888da731738732"
+    },
+    {
+      "file": "app/src/main/webapp/assets/portfolio/poster-7.png",
+      "sha256": "9bbe887bcf37fa88222d551899ce50b5e4747184e45727c32ba1223632f894fd"
+    },
+    {
+      "file": "app/src/main/webapp/assets/portfolio/poster-8.png",
+      "sha256": "e41f43a9269fc3819089afcb7c9ff7a04271094d64dc148eebcaa57428af59a4"
+    }
+  ],
+  "existing_demo_database": {
+    "method": "Exact SHA2 match of previous synthetic artwork; no reseed",
+    "replaced_rows": 26
+  }
+}

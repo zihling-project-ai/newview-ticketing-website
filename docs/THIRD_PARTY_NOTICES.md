@@ -1,17 +1,42 @@
 # 第三方素材與授權
 
-本專案尚未建立全庫開源LICENSE。團隊原始程式的再散布同意、課程條款及完整依賴授權仍待確認；整理與改名不等同取得公開權利。
+更新日期：2026-10-18。原始碼已上傳私人 GitHub 儲存庫，尚未公開；本次檢查未變更遠端或網站部署。
 
-| 保留項目 | 來源與狀態 |
+## 團隊與課程
+
+維護者已於 2026-10-18 確認團隊程式與課程內容可公開分享。本文件依其確認記錄，未另外調閱契約。這不涵蓋所有第三方套件與素材，也不自動授予整庫開源再授權權利；目前沒有全庫 LICENSE。
+
+## 隨附素材與前端套件
+
+| 項目 | 來源、條款與檢查結果 |
 |---|---|
-| 團隊程式與版型 | 學生團隊分工；個別再散布權待確認 |
-| Maven相依套件 | app/pom.xml列出版本；不散布快取／JAR，未完成全部傳遞依賴漏洞與授權稽核 |
-| jQuery 3.2.1 | 保留檔頭，上游MIT條款於docs/licenses |
-| Bootstrap 4.0.0-beta | 保留檔頭與上游授權原文 |
-| Popper 1.12.5 | 原JS包含完整著作權與MIT條款 |
-| Font Awesome 4.7.0 | 官方v4說明區分字型OFL、程式MIT、文件CC BY；完整條款／通知最終核對待確認 |
-| 幾何海報與輪播圖 | 由程式繪製，產生器私有保存；文字光柵化使用系統字型，其條款仍待確認 |
-| 測試圖片 | GenerateImages.java產生的純色圖，不使用不明照片 |
-| 網站截圖 | 真實展示版畫面，使用虛構資料；繼承原程式／素材權利限制 |
+| Bootstrap 5.3.8 | 官方 MIT；CSS 與 bundle 原檔頭保留，全文見 licenses/bootstrap-5.3.8.txt。已移除舊 Bootstrap 與 jQuery |
+| Popper Core 2.11.8 | 包含在 Bootstrap bundle，MIT 全文見 licenses/popper-core-2.11.8.txt；不再使用 Popper 1.12.5 |
+| Font Awesome 4.7.0 | 官方將 fonts 指定為 SIL OFL 1.1，CSS／LESS／SCSS 為 MIT，其他文件為 CC BY 3.0；原著作權與檔頭保留。另補官方版本 README、OFL 及 MIT 條款。字型 metadata 記載 Copyright Dave Gandy 2016；不得把圖示商標當作服務背書 |
+| 幾何海報與輪播圖 | 原繪圖構圖，文字已改用 OFL 1.1 的 Noto Sans TC 重新輸出共 11 張 PNG，不散布系統字型檔；見 FONT_REVIEW.md |
+| 網站截圖 | 為本機網站實際畫面，使用虛構展示資料；仍包含網站使用的圖示、字型及介面素材 |
+| 測試圖片 | 由 Java 工具產生的純色圖 |
+| 原始網站版型 | 團隊／課程範圍已由維護者確認；是否另有課程外第三方模板來源尚未識別，需維護者提供已知來源或確認無此來源 |
 
-授權原文依法保留原語言，不為了中文版而改寫條款。參考網址與檔案指紋見docs/licenses/source-register.json。尚未宣稱所有公開權利已完成確認，也未上傳或建立公開服務。
+Font Awesome 官方來源核對結果見 [檔案比對](evidence/fontawesome-source-check.json)。共核對 37 個檔案：7 個逐位元一致，30 個在正規化換行後一致。沒有未能對應官方內容的檔案，但不宣稱整個目錄逐位元等同官方發行包；本輪未改動這些素材。
+
+## Java 相依套件
+
+Maven 不提交快取 JAR，但 WAR 建置會包含執行相依套件；沒有把 JAR 放到 Git 不代表後續散布 WAR 可省略通知。修正前部署包 95 個 Maven 套件的 POM 宣告保留在歷史清單；本輪精簡後的實際依賴見 [目前套件清單](evidence/dependency-review-after.json)。部分宣告由父 POM 繼承，本次未完成全部遞迴解析；Oracle 驅動已移除。MySQL Connector/J 等仍依各自條款，不能統一宣稱為 MIT。
+
+完整傳遞依賴、建置外掛及最終 WAR 的授權通知彙整仍未完成。本輪為素材與宣告盤點，不是完整法律審查；授權原文保留原語言，不改寫成中文條款。
+
+## 授權原文與來源
+
+- [歷史 jQuery MIT](licenses/jquery-3.2.1.txt)（目前已移除）
+- [Bootstrap 5.3.8 MIT](licenses/bootstrap-5.3.8.txt)
+- [Popper Core 2.11.8 MIT](licenses/popper-core-2.11.8.txt)
+- [Font Awesome 4.7.0 官方說明](licenses/fontawesome-4.7.0-upstream-readme.txt)
+- [OFL 1.1 條款](licenses/OFL-1.1.txt)
+- [MIT 條款範本](licenses/MIT.txt)：一般條款原文，實際權利人以原套件檔頭為準，不取代著作權通知。
+- [Font Awesome 官方授權頁](https://fontawesome.com/v4/license/)
+- [下載來源與 SHA-256](licenses/source-register.json)
+
+公開決策與未完成事項以 [公開前狀態](PUBLICATION_REVIEW.md) 為準。
+
+網站字型與圖片字型的詳細檢查見 [字型說明](FONT_REVIEW.md)。

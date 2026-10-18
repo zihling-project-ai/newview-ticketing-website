@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-18",
+  "suites": [
+    {
+      "suite": "social",
+      "passed": true,
+      "checks": 29,
+      "seconds": 3.07
+    },
+    {
+      "suite": "images",
+      "passed": true,
+      "checks": 15,
+      "seconds": 1.86
+    },
+    {
+      "suite": "members",
+      "passed": true,
+      "checks": 28,
+      "seconds": 2.52
+    },
+    {
+      "suite": "passwords",
+      "passed": true,
+      "checks": 38,
+      "seconds": 7.19
+    },
+    {
+      "suite": "member_library",
+      "passed": true,
+      "checks": 36,
+      "seconds": 4.02
+    },
+    {
+      "suite": "activities",
+      "passed": true,
+      "checks": 32,
+      "seconds": 2.44
+    },
+    {
+      "suite": "cart",
+      "passed": true,
+      "checks": 50,
+      "seconds": 4.0
+    },
+    {
+      "suite": "seats",
+      "passed": true,
+      "checks": 49,
+      "seconds": 4.35
+    },
+    {
+      "suite": "cancel_orders",
+      "passed": true,
+      "checks": 39,
+      "seconds": 5.05
+    },
+    {
+      "suite": "tickets",
+      "passed": true,
+      "checks": 43,
+      "seconds": 5.33
+    },
+    {
+      "suite": "reviews",
+      "passed": true,
+      "checks": 42,
+      "seconds": 2.75
+    },
+    {
+      "suite": "coupons",
+      "passed": true,
+      "checks": 66,
+      "seconds": 8.5
+    },
+    {
+      "suite": "front_flow",
+      "passed": true,
+      "checks": 36,
+      "seconds": 3.32
+    },
+    {
+      "suite": "venue_layouts",
+      "passed": true,
+      "checks": 26,
+      "seconds": 3.64
+    },
+    {
+      "suite": "order_context",
+      "passed": true,
+      "checks": 18,
+      "seconds": 2.47
+    },
+    {
+      "suite": "qr_generation",
+      "passed": true,
+      "checks": 0,
+      "seconds": 4.32
+    }
+  ],
+  "passed": true,
+  "assertion_lines": 545,
+  "integration_checks": 547,
+  "qr_png_roundtrips": 300,
+  "build": "PASS; final WAR deployed to existing loopback Tomcat, data preserved",
+  "war_sha256": "47db2bbea6a1ebb2b01723bdcd09e2de4090f55d5515fbcb8821e63a3b604e45",
+  "browser_checks": [
+    "390px mobile menu open/close",
+    "homepage manual carousel and pause",
+    "category search: 18 to 2 results",
+    "category hot sort and page size 3: page 2 of 6",
+    "two-image Bootstrap carousel: active slide 0 to 1",
+    "1280px homepage and 8 activity images; no horizontal overflow",
+    "login and logout using synthetic demo account",
+    "activity 1 seat entry opens 100-seat grid"
+  ],
+  "fixture_cleanup": "Temporary two-image post deleted by original author; browser demo account logged out",
+  "final_static_smoke": "Deployed HTML/CSS/JS/font license/poster match source; final WAR matches deployed WAR",
+  "note": "Full backend integration suite ran after dependency/code changes; final cosmetic font weight, CSS underline adjustment and notices were followed by rebuild and browser/static smoke checks."
+}

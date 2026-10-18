@@ -168,3 +168,7 @@ python3 scripts/local.py start
 ## 12. 上傳前的執行產物
 
 app/target、__pycache__、.DS_Store不屬於來源，本次已移到專案外備份。重新建置／執行Python／使用Finder後可能再次產生，.gitignore會排除。從乾淨來源啟動前應先build；目前已在跑的Tomcat使用專案外的已部署WAR，不因清理來源資料夾的target而停止。
+
+## 13. 相依套件與字型更新
+
+2026-10-18 已移除未使用的框架依賴、升級必要 JSON／資料庫驅動與 Bootstrap，並以 Noto Sans TC 重新輸出展示圖片。更新後已重建 WAR、部署到本機 Tomcat，並完成 15 組整合回測及 300 張 QR PNG 解碼。套件掃描範圍與結果見 [相依套件檢查](DEPENDENCY_REVIEW.md)，字型來源見 [字型檢查](FONT_REVIEW.md)。新驗證不取代先前歷史快照。

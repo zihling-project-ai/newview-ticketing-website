@@ -761,3 +761,6 @@ body { min-width: 320px; letter-spacing: .015em; }
  .nv-ticket-facts { gap:18px 12px; }
  .nv-order-activity { padding:15px; }
 }
+
+/* Preserve the established navigation/card style with Bootstrap 5 defaults. */
+a { text-decoration: none; }

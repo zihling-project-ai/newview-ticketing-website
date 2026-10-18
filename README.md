@@ -16,7 +16,7 @@
 
 ## 技術架構
 
-Java 17、Servlet、Apache Tomcat 9、Maven、Hibernate、MySQL 8、Redis、HTML／CSS／JavaScript 與 AJAX。使用 Servlet WAR 部署；POM 保留 Spring Boot 相依套件，但不是透過 Boot 主程式啟動。
+Java 17、Servlet、Apache Tomcat 9、Maven、Hibernate、MySQL 8、Redis、HTML／CSS／JavaScript 與 AJAX。使用 Servlet WAR 部署至外部 Tomcat，Maven 明確管理必要相依套件。
 
 ```mermaid
 flowchart LR
@@ -82,8 +82,10 @@ python3 scripts/setup/seed_portfolio_orders.py
 - [ERD、資料字典與介面](docs/data-and-interfaces.md)
 - [執行與驗證](docs/setup-and-validation.md)
 - [第三方素材與授權](docs/THIRD_PARTY_NOTICES.md)
+- [公開前狀態與待確認事項](docs/PUBLICATION_REVIEW.md)
+- [相依套件檢查](docs/DEPENDENCY_REVIEW.md)
 
-目前僅本機保存，尚未上傳或公開。真實交易、後台營運、有限站票庫存、壓力測試及正式部署不在本機展示範圍；團隊與素材公開權利仍待確認。
+原始碼已上傳至私人 GitHub 儲存庫，尚未公開；網站仍為本機展示。真實交易、後台營運、有限站票庫存、壓力測試及正式部署不在本機展示範圍；團隊與課程內容已由維護者確認可公開分享；第三方素材授權與套件安全檢查狀態見公開前文件。
 
 ## 前端維護方式
 
