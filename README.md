@@ -56,7 +56,13 @@ python3 scripts/setup/seed_portfolio.py --replace-local-showcase
 python3 scripts/setup/seed_portfolio_orders.py
 ```
 
-開啟 http://127.0.0.1:8083/newview/forum_home.html。建立展示資料後可用yuchen或yian登入，展示密碼均為NewView-local-2026!。
+啟動後開啟：[NewView 本機網站](http://127.0.0.1:8083/newview/forum_home.html)。
+
+建立展示資料後，可使用以下帳密登入：
+
+| 展示帳號 | 展示密碼 |
+|---|---|
+| `yuchen` 或 `yian` | `NewView-local-2026!` |
 
 之後啟動不需重新建庫或執行種子；啟動前確保Docker已運作、CATALINA_HOME已設定，執行 `python3 scripts/local.py start`。已啟動則不必重跑。第一次安裝、停止、換電腦、修改前端與故障排除見 [完整啟動文件](docs/setup-and-validation.md)。
 
